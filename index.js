@@ -14,10 +14,6 @@ bot.api.setMyCommands([
         command: 'start',
         description: 'Запуск бота',
     },
-    {
-        command: 'chop',
-        description: 'доступ'
-    },
 ]);
 
 
@@ -53,21 +49,6 @@ bot.callbackQuery('#1', async (ctx) => {
     await ctx.reply('Хорошо, вот ссылка на БЕСПЛАТНЫЙ тг канал: https://t.me/luckyjetsignaliver', {
         
     })
-})
-
-
-
-
-bot.on('message:text', async (msg) => {
-    const chatId = msg.chat.id;
-
-    let pass = await bot.getChatMember('@+pWGE8Ck_Eh1jZDYy', chatId)
-
-if (pass.status === 'left' || pass.status === 'creator') {
-    await bot.sendMessage(chatId, 'Что бы продолжить вступи в канал - https://t.me/+pWGE8Ck_Eh1jZDYy.\n\nПосле напиши мне еще раз и я отправлю тебе ссылку в приватный канал');
-} else if (pass.status === 'member') {
-    await bot.sendMessage(chatId, 'Удачного пользования');
-}
 })
 
 
